@@ -1,0 +1,2 @@
+# Ignore the file containing Reddit API credentials
+praw_credentials.py
