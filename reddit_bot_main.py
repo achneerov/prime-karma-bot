@@ -20,7 +20,7 @@ reddit = praw.Reddit(
 )
 
 # Subreddit to monitor
-subreddit = reddit.subreddit("funny")
+subreddit = reddit.subreddit("math")
 
 
 # Stream all new comments in the subreddit
@@ -29,6 +29,7 @@ for comment in subreddit.stream.comments(skip_existing=True):
     print(comment.author.link_karma)
     # Check if the comment author has prime karma above 100
     if sympy.isprime(comment.author.link_karma) and comment.author.link_karma > 100:
-        #reply_message = f"You have {comment.author.link_karma} karma, which is prime"
-        #comment.reply(reply_message)
+        reply_message = f"You have {comment.author.link_karma} post karma, which is a prime number!"
+        comment.reply(reply_message)
         print("we have a hit")
+        
